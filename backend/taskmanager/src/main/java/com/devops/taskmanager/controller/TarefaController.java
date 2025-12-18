@@ -1,29 +1,30 @@
 package com.devops.taskmanager.controller;
 
-import com.devops.taskmanager.model.Tarefa;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.devops.taskmanager.domain.Tarefa;
+import com.devops.taskmanager.repository.TarefaRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/tarefas")
 public class TarefaController {
 
-    private List<Tarefa> tarefas = new ArrayList<>();
+    private final TarefaRepository tarefaRepository;
+
+    public TarefaController(TarefaRepository tarefaRepository) {
+        this.tarefaRepository = tarefaRepository;
+    }
 
     @GetMapping
     public List<Tarefa> listarTarefas() {
-        return tarefas;
+        return tarefaRepository.findAll();
     }
 
     @PostMapping
-    public Tarefa criarTarefa(Tarefa tarefa) {
-        tarefa.setId((long) (tarefas.size() + 1));
-        tarefas.add(tarefa);
-        return tarefa;
+    @ResponseStatus(HttpStatus.CREATED)
+    public Tarefa criarTarefa(@RequestBody Tarefa tarefa) {
+        return tarefaRepository.save(tarefa);
     }
 }
