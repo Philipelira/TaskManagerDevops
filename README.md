@@ -1,23 +1,41 @@
-# Task Manager API
+# 📌 Task Manager DevOps
 
-Projeto desenvolvido para a disciplina de DevOps.
+Projeto desenvolvido como trabalho acadêmico para a disciplina de **DevOps**, com o objetivo de demonstrar a criação de uma aplicação completa contendo **back-end, front-end, versionamento com Git, uso de Docker e testes de API**.
 
-## 📌 Descrição
-Aplicação para gerenciamento de tarefas, permitindo criar e listar tarefas.
+---
 
-O projeto foi desenvolvido utilizando:
+## 🧠 Visão Geral do Projeto
+
+O **Task Manager DevOps** é uma aplicação simples de gerenciamento de tarefas, permitindo:
+
+- Criar tarefas
+- Listar tarefas
+- Atualizar tarefas
+- Excluir tarefas
+
+A aplicação foi construída com foco em **arquitetura**, **boas práticas** e **conceitos DevOps**, priorizando entrega funcional e organização do projeto.
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
+### Back-end
 - Java 17
 - Spring Boot
-- Banco de dados H2
-- Front-end em HTML, CSS e JavaScript
+- Spring Web (REST)
+- Spring Data JPA
+- Banco de dados H2 (em memória)
 - Maven
-- Git e GitHub
+- Docker
 
-## ⚙️ Funcionalidades
-- Criar tarefa
-- Listar tarefas
-- API REST com JSON
+### Front-end
+- HTML5
+- CSS3
+- JavaScript puro (Vanilla JS)
+- Docker + Nginx
 
-## 🚀 Como executar o backend
-```bash
-./mvnw spring-boot:run
+### DevOps / Ferramentas
+- Git
+- GitHub
+- Docker
+- Postman (testes e documentação da API)
